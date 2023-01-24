@@ -1,6 +1,5 @@
 import random
 import arcade
-import time
 
 class Fruit(arcade.Sprite):
     def __init__(self, game):
@@ -145,9 +144,7 @@ class Game(arcade.Window):
         arcade.start_render()
 
         self.snake.draw()
-        self.count = random.randint(1,3)
         self.food.draw()
-        self.a=time.time()
         
 
 
@@ -169,7 +166,7 @@ class Game(arcade.Window):
 
             self.snake.eat(self.food, self.ind)
             self.index = random.randint(1,6)
-            
+            self.count = random.randint(1,3)
             for i in range(self.count):
                 if self.index ==1:
                     self.food = self.apple
